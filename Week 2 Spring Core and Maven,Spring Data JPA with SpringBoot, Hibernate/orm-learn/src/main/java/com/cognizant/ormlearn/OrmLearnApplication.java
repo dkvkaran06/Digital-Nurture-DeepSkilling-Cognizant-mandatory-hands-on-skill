@@ -23,6 +23,7 @@ public class OrmLearnApplication {
         countryService = context.getBean(CountryService.class);
         testGetAllCountries();
         testGetCountry();
+        testAddCountry();
     }
 
     private static void testGetAllCountries() {
@@ -36,6 +37,14 @@ public class OrmLearnApplication {
         LOGGER.info("Start");
         Country country = countryService.getCountry("IN");
         LOGGER.debug("Country: {}", country);
+        LOGGER.info("End");
+    }
+
+    private static void testAddCountry() {
+        LOGGER.info("Start");
+        Country country = new Country("JP", "Japan");
+        countryService.addCountry(country);
+        LOGGER.info("Country Added Successfully");
         LOGGER.info("End");
     }
 }
