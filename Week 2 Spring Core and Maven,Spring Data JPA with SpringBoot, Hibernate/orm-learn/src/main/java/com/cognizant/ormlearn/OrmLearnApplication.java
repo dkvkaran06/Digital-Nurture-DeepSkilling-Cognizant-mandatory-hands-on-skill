@@ -24,6 +24,7 @@ public class OrmLearnApplication {
         testGetAllCountries();
         testGetCountry();
         testAddCountry();
+        testUpdateCountry();
     }
 
     private static void testGetAllCountries() {
@@ -45,6 +46,14 @@ public class OrmLearnApplication {
         Country country = new Country("JP", "Japan");
         countryService.addCountry(country);
         LOGGER.info("Country Added Successfully");
+        LOGGER.info("End");
+    }
+
+    private static void testUpdateCountry() {
+        LOGGER.info("Start");
+        Country country = new Country("JP", "Japan Updated");
+        countryService.updateCountry(country);
+        LOGGER.info("Country Updated Successfully");
         LOGGER.info("End");
     }
 }

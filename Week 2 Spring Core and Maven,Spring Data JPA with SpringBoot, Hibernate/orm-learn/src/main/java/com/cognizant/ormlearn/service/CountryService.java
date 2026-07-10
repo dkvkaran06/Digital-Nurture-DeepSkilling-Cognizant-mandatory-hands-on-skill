@@ -29,4 +29,9 @@ public class CountryService {
     public void addCountry(Country country) {
         countryRepository.save(country);
     }
+
+    @Transactional
+    public void updateCountry(Country country) {
+        countryRepository.save(country);
+    }
 }
