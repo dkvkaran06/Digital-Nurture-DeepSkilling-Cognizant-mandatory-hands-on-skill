@@ -25,7 +25,8 @@ public class OrmLearnApplication {
         testGetCountry();
         // testAddCountry();
         // testUpdateCountry();
-        testDeleteCountry();
+        // testDeleteCountry();
+        testFindCountryByCode();
     }
 
     private static void testGetAllCountries() {
@@ -62,6 +63,17 @@ public class OrmLearnApplication {
         LOGGER.info("Start");
         countryService.deleteCountry("JP");
         LOGGER.info("Country Deleted Successfully");
+        LOGGER.info("End");
+    }
+
+    private static void testFindCountryByCode() {
+        LOGGER.info("Start");
+        try {
+            Country country = countryService.findCountryByCode("IN");
+            LOGGER.debug("Country={}", country);
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage());
+        }
         LOGGER.info("End");
     }
 }
