@@ -22,12 +22,20 @@ public class OrmLearnApplication {
         LOGGER.info("Inside main");
         countryService = context.getBean(CountryService.class);
         testGetAllCountries();
+        testGetCountry();
     }
 
     private static void testGetAllCountries() {
         LOGGER.info("Start");
         List<Country> countries = countryService.getAllCountries();
         LOGGER.debug("countries={}", countries);
+        LOGGER.info("End");
+    }
+
+    private static void testGetCountry() {
+        LOGGER.info("Start");
+        Country country = countryService.getCountry("IN");
+        LOGGER.debug("Country: {}", country);
         LOGGER.info("End");
     }
 }

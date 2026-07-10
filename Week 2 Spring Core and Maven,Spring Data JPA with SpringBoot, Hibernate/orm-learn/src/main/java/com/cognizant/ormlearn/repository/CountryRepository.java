@@ -8,4 +8,6 @@ import com.cognizant.ormlearn.model.Country;
 @Repository
 public interface CountryRepository extends JpaRepository<Country, String> {
 
+    Country findByCode(String code);
+
 }
