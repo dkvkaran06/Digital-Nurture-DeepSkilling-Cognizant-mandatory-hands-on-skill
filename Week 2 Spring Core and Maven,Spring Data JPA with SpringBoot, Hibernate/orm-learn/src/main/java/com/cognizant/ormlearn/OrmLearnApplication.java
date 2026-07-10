@@ -23,8 +23,9 @@ public class OrmLearnApplication {
         countryService = context.getBean(CountryService.class);
         testGetAllCountries();
         testGetCountry();
-        testAddCountry();
-        testUpdateCountry();
+        // testAddCountry();
+        // testUpdateCountry();
+        testDeleteCountry();
     }
 
     private static void testGetAllCountries() {
@@ -54,6 +55,13 @@ public class OrmLearnApplication {
         Country country = new Country("JP", "Japan Updated");
         countryService.updateCountry(country);
         LOGGER.info("Country Updated Successfully");
+        LOGGER.info("End");
+    }
+
+    private static void testDeleteCountry() {
+        LOGGER.info("Start");
+        countryService.deleteCountry("JP");
+        LOGGER.info("Country Deleted Successfully");
         LOGGER.info("End");
     }
 }

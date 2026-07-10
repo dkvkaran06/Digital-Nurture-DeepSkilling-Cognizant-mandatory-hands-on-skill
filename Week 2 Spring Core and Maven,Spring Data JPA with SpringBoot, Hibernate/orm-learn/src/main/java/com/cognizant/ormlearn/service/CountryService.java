@@ -34,4 +34,9 @@ public class CountryService {
     public void updateCountry(Country country) {
         countryRepository.save(country);
     }
+
+    @Transactional
+    public void deleteCountry(String code) {
+        countryRepository.deleteById(code);
+    }
 }
