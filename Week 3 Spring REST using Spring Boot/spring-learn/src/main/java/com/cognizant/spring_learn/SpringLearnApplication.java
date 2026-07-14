@@ -28,7 +28,7 @@ public class SpringLearnApplication {
                 new ClassPathXmlApplicationContext("country.xml");
 
         Country country =
-                context.getBean("country", Country.class);
+                context.getBean("in", Country.class);
 
         LOGGER.debug("Country : {}", country);
 
